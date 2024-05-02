@@ -1,0 +1,36 @@
+.navbar {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.navbar img {
+    width: 200px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.navbarLink {
+    text-decoration: none;
+    color: #ff6060;
+    font-size: 20px;
+}
+
+.navbarChoice {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 860px) {
+    .navbar img {
+        width: 150px;
+        height: 100px;
+    }
+
+    .navbarLink {
+        font-size: 15px;
+    }
+}
