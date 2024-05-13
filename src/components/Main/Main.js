@@ -10,12 +10,14 @@ function Main() {
             <div className='appartement'>
                 {element.map(appartements => {
                     return(
-                        <Link to={`/pages/${appartements.id}`}>
-                        <div className='box' key={appartements.id}>
-                            <img src={ appartements.cover} alt={ appartements.title }/>
-                            <p className='textBox'>{ appartements.title }</p>
+                        <div key={appartements.id}>
+                            <Link to={`/pages/${appartements.id}`}>
+                            <div className='box'>
+                                <img src={ appartements.cover} alt={ appartements.title }/>
+                                <p className='textBox'>{ appartements.title }</p>
+                            </div>
+                            </Link>
                         </div>
-                        </Link>
                     )
                 })}
             </div>
