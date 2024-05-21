@@ -13,14 +13,13 @@ const Propos = () => {
     const [count2, setCount2] = useState(false)
 
     const handleClick2 = function (e) {
-        e.preventDefault()
+        //e.preventDefault()
         setCount2(!count2)
     }
 
     const [count3, setCount3] = useState(false)
 
     const handleClick3 = function (e) {
-        e.preventDefault()
         setCount3(!count3)
     }
 
@@ -44,21 +43,21 @@ const Propos = () => {
             {count && (<p className='clickPropos'>Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.</p>)}
         </div>
         <div>
-            <div onClick={handleClick2} className='propos'>
+            <div onClick={handleClick2} className={`propos ${count2 ? 'rotate-icon' : ''} ${count2 ? 'scale-up-ver-top' : ''}`}>
                 <p>Respect</p>
                 <i className="fas fa-chevron-up" />
             </div>
             {count2 && (<p className='clickPropos'>La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.</p>)}
         </div>
         <div>
-            <div onClick={handleClick3} className='propos'>
+            <div onClick={handleClick3} className={`propos ${count3 ? 'rotate-icon' : ''}`}>
                 <p>Service</p>
                 <i className="fas fa-chevron-up" />
             </div>
-            {count3 && (<p className='clickPropos'>Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question.</p>)}
+            {count3 && (<p className={`clickPropos ${count4 ? 'scale-up-ver-top' : ''}`}>Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question.</p>)}
         </div>
         <div>
-            <div onClick={handleClick4} className='propos'>
+            <div onClick={handleClick4} className={`propos ${count4 ? 'rotate-icon' : ''} `}>
                 <p>Résponsabilité</p>
                 <i className="fas fa-chevron-up" />
             </div>

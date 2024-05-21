@@ -40,25 +40,30 @@
       color: #ff6060;
       border-radius: 0 0 5px 5px;
       font-size: 20px;
-      padding: 20px 14px 20px 15px
+      padding: 20px 14px 20px 15px;
+      transition: transform 0.7s ease;
   }
   
   .propos i {
-      transition: transform 0.5s ease;
+      transition: transform 0.7s ease;
   }
   
   .count .propos i {
       justify-content: start;
     transform: rotate(180deg);
   }
+
+
   
   .clickPropos .scale-up-ver-top {
+      // -webkit-animation: scale-up-ver-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+      //         animation: scale-up-ver-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
       -webkit-animation: scale-up-ver-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-              animation: scale-up-ver-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-ver-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   }
   
   .rotate-icon i {
-      transition: transform 0.3s ease; /* Ajoutez une transition pour une rotation en douceur */
+      transition: transform 0.7s ease; /* Ajoutez une transition pour une rotation en douceur */
     }
     
     .rotate-icon:hover i {
@@ -68,7 +73,6 @@
     @media only screen and (max-width: 860px) {
       .propos {
         width: 100%;
-        font-size: 14px;
       }
   
       .clickPropos {
@@ -76,8 +80,4 @@
         font-size: 14px;
         line-height: 1.5;
       }
-  
-      // .affiche {
-      //   padding-bottom: 18px;
-      // }
     }

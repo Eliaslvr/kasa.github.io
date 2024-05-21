@@ -20,8 +20,12 @@
 
 .navbarChoice {
     display: flex;
-    width: 200px;
+    width: 260px;
     justify-content: space-between;
+}
+
+.line {
+    border-bottom: 1px solid;
 }
 
 @media only screen and (max-width: 860px) {

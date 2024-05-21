@@ -46,8 +46,8 @@ const Carrousel = () => {
                 <img className='img' src={image[currentSlide]} alt={`Slide ${currentSlide}`} />
             </div>
             <div className='carousel-buttons'>
-                <i class="carousel-arrow-left fas fa-chevron-left" onClick={goToPrevSlide}></i>
-                <i class="carousel-arrow-right fas fa-chevron-right" onClick={goToNextSlide}></i>
+                <i className="carousel-arrow-left fas fa-chevron-left" onClick={goToPrevSlide}></i>
+                <i className="carousel-arrow-right fas fa-chevron-right" onClick={goToNextSlide}></i>
             </div>
         </div>
     );

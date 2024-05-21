@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     width: 90%;
-    margin: 0 auto;
+    margin: 30px auto 0px;
 }
 
 .nameHome {
@@ -20,9 +20,9 @@
 }
 
 .localisation {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 500;
-    margin-top: 7px;
+    color: black;
     margin-bottom: 20px;
 }
 
@@ -33,7 +33,7 @@
 
 .background  {
     background-color: #ff6060;
-    margin-left: 0;
+    margin-right: 13px;
     color: white;
     padding: 5px 10px;
     font-size: 15px;
@@ -94,18 +94,40 @@
     width: 47%;
 }
 
+.fa-chevron-up {
+    cursor: pointer;
+}
+
+.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.6s;
+}
+
+// .fa-chevron-up.rotate {
+//     transform: rotate(180deg);
+// 	// -webkit-animation: flip-2-hor-top-1 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+// 	//         animation: flip-2-hor-top-1 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+// }
+
 @media only screen and (max-width: 860px) {
+
+    .carousel-container {
+        margin: 10px auto 0;
+    }
+
     .information {
         flex-direction: column;
+        margin: 10px auto 0;
     }
     
     .nameHome {
-        font-size: 21px;
+        font-size: 29px;
     }
 
     .localisation {
-        font-size: 13px;
-        margin-bottom: 15px;
+        font-size: 20px;
+        margin: 0;
+        padding: 12px 0;
     }
 
     .background {
@@ -132,7 +154,7 @@
     }
 
     .nameDescription {
-        font-size: 14px;
+        font-size: 17px;
     }
 
     .infoDescription {

@@ -4,6 +4,9 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import Carrousel from '../Carrousel/Carrousel';
 
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Pages = () => {
 
     const [count, setCount] = useState(false)
@@ -26,17 +29,16 @@ const Pages = () => {
 
     const { id } = useParams();
     const element = getId(id);
-    console.log(element);
+
+    // function animation() {
+    //     const icon = document.querySelector('.fa-chevron-up');
+    //     icon.addEventListener("click", () => {
+    //         icon.classList.toggle('rotate');
+    //     })
+    // }
 
     return (
         <div>
-            {/* <div className='banner'>
-                {element.pictures}
-                <div className='bannerText'>
-                    <p>Chez vous, partout et ailleurs</p>
-                </div>
-            </div> */}
-
             <Carrousel />
 
             <div className='information'>
@@ -60,7 +62,13 @@ const Pages = () => {
                         <p className='namePerson'>{element.host.name}</p>
                         <img className='pictureProfil' src={element.host.picture} alt='Profil' />
                     </div>
-                    <p className='icone'></p>
+                    <p className='icone'>
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} />
+                    </p>
                 </div>
             </div>
             <div className='info'>
@@ -83,7 +91,6 @@ const Pages = () => {
                 </div>
             </div>
         </div>
-
     );
 };
 

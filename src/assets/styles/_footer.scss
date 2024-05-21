@@ -4,6 +4,13 @@
     margin-top: 35px;
 }
 
+.footer img {
+    display: flex;
+    margin: 0 auto;
+    padding-top: 56px;
+    width: 145px;
+}
+
 .footer p {
     font-size: 20px;
     color: white;
@@ -19,6 +26,11 @@
     }
 
     .footer p {
-        font-size: 15px;
+        font-size: 14px;
+        padding-top: 10px;
+    }
+
+    .footerSpan {
+        display: block;
     }
 }
