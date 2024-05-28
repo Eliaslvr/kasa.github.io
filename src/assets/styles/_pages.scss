@@ -47,7 +47,7 @@
 .namePerson {
     font-size: 20px;
     font-weight: 500;
-    margin-top: 20px;
+    padding-top: 8px;
     flex-wrap: wrap;
 }
 
@@ -81,14 +81,31 @@
 
 .person {
     display: flex;
-    margin-top: 25px;
     width: 156px;
+    margin-bottom: 20px;
 }
 
 .pictureProfil {
     border-radius: 70px;
     height: 67px;
 }
+
+.icone {
+    font-size: 20px;
+}
+
+.icone i {
+    padding-right: 10px;
+}
+
+.grey {
+    color: gray;
+}
+
+.rotate {
+    transform: rotate(180deg); /* Vous pouvez ajuster l'angle de rotation selon vos besoins */
+    transition: transform 0.3s ease; /* Pour ajouter une transition fluide */
+  }
 
 .width {
     width: 47%;
@@ -137,11 +154,24 @@
 
     .namePerson {
         font-size: 14px;
+        padding-top: 9px;
+        width: 70px;
+    }
+
+    .pictureProfil {
+        height: 50px;
     }
 
     .person {
-        width: auto;
-        margin-top: auto;
+        // width: auto;
+        // margin-top: auto;
+        float: right;
+        width: 120px;
+    }
+
+    .icone {
+        padding-top: 20px;
+        font-size: 17px;
     }
 
     .info {
@@ -159,5 +189,9 @@
 
     .infoDescription {
         font-size: 14px;
+    }
+
+    .margin_top_mobile {
+        margin-top: 0px;
     }
 }

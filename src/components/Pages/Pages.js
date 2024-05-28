@@ -4,23 +4,24 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import Carrousel from '../Carrousel/Carrousel';
 
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 const Pages = () => {
 
     const [count, setCount] = useState(false)
+    const [rotation, setRotation] = useState(false);
 
     const handleClick = function (e) {
         e.preventDefault()
         setCount(!count)
+        setRotation(!rotation);
     }
 
     const [count2, setCount2] = useState(false)
+    const [rotation2, setRotation2] = useState(false);
 
     const handleClick2 = function (e) {
         e.preventDefault()
         setCount2(!count2)
+        setRotation2(!rotation2);
     }
 
     const getId = (id) => {
@@ -30,18 +31,27 @@ const Pages = () => {
     const { id } = useParams();
     const element = getId(id);
 
-    // function animation() {
-    //     const icon = document.querySelector('.fa-chevron-up');
-    //     icon.addEventListener("click", () => {
-    //         icon.classList.toggle('rotate');
-    //     })
-    // }
+    ///////////// Etoiles
+    function generateStars(starCount) {
+        const maxStars = 5;
+        let stars = [];
+      
+        for (let i = 0; i < maxStars; i++) {
+            if (i < starCount) {
+                stars.push(<i key={i} className='fas fa-star'></i>); // étoile rouge
+            } else {
+                stars.push(<i key={i} className='fas fa-star grey'></i>); // étoile grise
+            }
+        }
+      
+        return stars;
+    }
 
     return (
         <div>
             <Carrousel />
 
-            <div className='information'>
+            <div key={id} className='information'>
                 <div className='nameElement'>
                     <p className='nameHome'>
                         {element.title}
@@ -50,8 +60,8 @@ const Pages = () => {
                         {element.location}
                     </p>
                     <div className='flex'>
-                        {element.tags.map((elem) => (
-                            <div className={`background`}>
+                        {element.tags.map((elem, index) => (
+                            <div key={index} className={`background`}>
                                 <p>{elem}</p>
                             </div> 
                         ))}
@@ -63,31 +73,31 @@ const Pages = () => {
                         <img className='pictureProfil' src={element.host.picture} alt='Profil' />
                     </div>
                     <p className='icone'>
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
+                        {generateStars(element.rating)}
                     </p>
                 </div>
             </div>
             <div className='info'>
                 <div className='width'>
-                    <div onClick={handleClick}>
-                        <p className='nameDescription'><span>Description</span><i className="fas fa-chevron-up"></i></p>
+                    <div>
+                    {/* Si rotation est vrai, la classe rotate est ajoutée. Sinon, aucune classe supplémentaire n'est ajoutée. */}
+                        <p className="nameDescription margin_top_mobile"><span>Description</span><i className={`fas fa-chevron-up ${rotation ? 'rotate' : ''}`} onClick={handleClick}></i></p>
                     </div>
                     {count && (<p className='infoDescription'>{element.description}</p>)}
                 </div>
                 <div className='width'>
-                    <div onClick={handleClick2}>
-                        <p className='nameDescription'><span>Equipement</span><i className="fas fa-chevron-up"></i></p>
+                    <div>
+                        <p className='nameDescription'><span>Equipement</span><i className={`fas fa-chevron-up ${rotation2 ? 'rotate' : ''}`} onClick={handleClick2}></i></p>
                     </div>
-                    {count2 && (<p className='infoDescription'>{element.equipments.map((elem) => (
-                                                                    <div>
-                                                                        <p>{elem}</p>
-                                                                    </div> 
-                                                                ))}
-                        </p>)}
+                    {count2 && (
+                        <div className='infoDescription'>
+                            {element.equipments.map((elem, index) => (
+                                <div key={index}>
+                                    <p>{elem}</p>
+                                </div> 
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
