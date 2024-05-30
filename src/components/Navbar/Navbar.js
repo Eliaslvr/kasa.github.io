@@ -10,7 +10,7 @@ function Navbar() {
 
     return (
         <div className='navbar'>
-            <NavLink>
+            <NavLink to='/'>
                 <div>
                     <img src={Images} alt='Logo' />
                 </div>

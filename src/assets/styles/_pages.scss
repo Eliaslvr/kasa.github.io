@@ -120,6 +120,10 @@
     transition: transform 0.6s;
 }
 
+.rotate2 {
+    transform: rotate(0deg);
+    transition: transform 0.6s;
+}
 // .fa-chevron-up.rotate {
 //     transform: rotate(180deg);
 // 	// -webkit-animation: flip-2-hor-top-1 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;

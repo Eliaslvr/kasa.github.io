@@ -6,21 +6,17 @@ import Carrousel from '../Carrousel/Carrousel';
 
 const Pages = () => {
 
-    const [count, setCount] = useState(false)
     const [rotation, setRotation] = useState(false);
 
     const handleClick = function (e) {
         e.preventDefault()
-        setCount(!count)
         setRotation(!rotation);
     }
 
-    const [count2, setCount2] = useState(false)
     const [rotation2, setRotation2] = useState(false);
 
     const handleClick2 = function (e) {
         e.preventDefault()
-        setCount2(!count2)
         setRotation2(!rotation2);
     }
 
@@ -81,17 +77,16 @@ const Pages = () => {
                 <div className='width'>
                     <div>
                     {/* Si rotation est vrai, la classe rotate est ajoutée. Sinon, aucune classe supplémentaire n'est ajoutée. */}
-                        <p className="nameDescription margin_top_mobile"><span>Description</span><i className={`fas fa-chevron-up ${rotation ? 'rotate' : ''}`} onClick={handleClick}></i></p>
+                        <p className="nameDescription margin_top_mobile"><span>Description</span><i className={`fas fa-chevron-up ${rotation ? 'rotate' : 'rotate2'}`} onClick={handleClick}></i></p>
                     </div>
-                    {count && (<p className='infoDescription'>{element.description}</p>)}
+                    {/* si count est vrai, alors ajoute le paragraphe... */}
+                    {rotation && (<p className='infoDescription'>{element.description}</p>)}
                 </div>
                 <div className='width'>
                     <div>
-                        <p className='nameDescription'><span>Equipement</span><i className={`fas fa-chevron-up ${rotation2 ? 'rotate' : ''}`} onClick={handleClick2}></i></p>
+                        <p className='nameDescription'><span>Equipement</span><i className={`fas fa-chevron-up ${rotation2 ? 'rotate' : 'rotate2'}`} onClick={handleClick2}></i></p>
                     </div>
-                    {count2 && (
-                        <div className='infoDescription'>
-                            {element.equipments.map((elem, index) => (
+                    {rotation2 && (<div className='infoDescription'>{element.equipments.map((elem, index) => (
                                 <div key={index}>
                                     <p>{elem}</p>
                                 </div> 

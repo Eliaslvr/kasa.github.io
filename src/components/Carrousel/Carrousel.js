@@ -1,9 +1,4 @@
 import React, { useState } from 'react';
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import { Carousel } from 'react-responsive-carousel'
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
 import elementJSON from '../../element.json'
 import { useParams } from 'react-router-dom';
 
@@ -13,17 +8,20 @@ const Carrousel = () => {
         return elementJSON.find((element) => element.id === id);
     }
 
+    // userParams permet d'accéder aux paramètres de l'URL.
     const { id } = useParams();
     const element = getId(id);
     const image = element.pictures.map((image) => 
         image
     )
 
+    // useState sert à gérer et mettre à jour l'état. ca commence à la premiere image
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const totalSlides = image.length;
 
     const goToNextSlide = () => {
+        // % totalSlides s'assure que l'index revient à 0 lorsque la dernière diapositive est atteinte.
         setCurrentSlide((prevSlide) => (prevSlide + 1) % totalSlides);
     }
 
@@ -31,16 +29,7 @@ const Carrousel = () => {
         setCurrentSlide((prevSlide) => (prevSlide - 1 + totalSlides) % totalSlides);
     }
 
-    // const settings = {
-    //     dots: true,
-    //     infinite: true,
-    //     speed: 500,
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1
-    //   };
-
     return (
-        // <div {...settings}>
         <div className='carousel settings'>
             <div className='carousel-container'>
                 <img className='img' src={image[currentSlide]} alt={`Slide ${currentSlide}`} />

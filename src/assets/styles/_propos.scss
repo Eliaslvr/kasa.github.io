@@ -29,7 +29,6 @@
       padding: 10px;
       display: flex;
       justify-content: space-between;
-      cursor: pointer;
   }
   
   .clickPropos {
@@ -53,7 +52,15 @@
     transform: rotate(180deg);
   }
 
+  .rotate {
+    transform: rotate(180deg);
+    transition: transform 0.6s;
+}
 
+.rotate2 {
+    transform: rotate(0deg);
+    transition: transform 0.6s;
+}
   
   .clickPropos .scale-up-ver-top {
       // -webkit-animation: scale-up-ver-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
