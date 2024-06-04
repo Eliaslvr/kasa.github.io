@@ -64,12 +64,32 @@
     justify-content: space-between;
 }
 
-.infoDescription {
+.bloc {
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+
+.clickPage {
     background-color: #f7f7f7;
-    color: #ff6060;
+    // width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
     border-radius: 0 0 5px 5px;
     font-size: 20px;
-    padding: 20px 14px 20px 15px
+    padding: 20px 14px 20px 15px;
+    transition: transform 0.7s ease;
+}
+
+.infoDescription {
+    background-color: #f7f7f7;
+    color: black;
+    border-radius: 0 0 5px 5px;
+    font-size: 20px;
+    /* padding: 5px 0px 2px 0px; */
+    display: flex;
+    flex-direction: column;
 }
 
 .info {
@@ -77,6 +97,10 @@
     justify-content: space-between;
     width: 90%;
     margin: 0 auto;
+}
+
+.infoEnd {
+    justify-content: flex-end;
 }
 
 .person {
@@ -102,13 +126,9 @@
     color: gray;
 }
 
-.rotate {
-    transform: rotate(180deg); /* Vous pouvez ajuster l'angle de rotation selon vos besoins */
-    transition: transform 0.3s ease; /* Pour ajouter une transition fluide */
-  }
-
 .width {
-    width: 47%;
+    // width: 47%;
+    width: 92%;
 }
 
 .fa-chevron-up {
@@ -124,11 +144,6 @@
     transform: rotate(0deg);
     transition: transform 0.6s;
 }
-// .fa-chevron-up.rotate {
-//     transform: rotate(180deg);
-// 	// -webkit-animation: flip-2-hor-top-1 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-// 	//         animation: flip-2-hor-top-1 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-// }
 
 @media only screen and (max-width: 860px) {
 
@@ -183,6 +198,17 @@
         margin-bottom: 30px;
     }
 
+    .bloc {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+    }
+
+    .clickPage {
+        font-size: 16px;
+    }
+    
     .width {
         width: 100%;
     }

@@ -1,24 +1,23 @@
 import React from 'react';
 import elementJson from '../../element.json'
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
 import Carrousel from '../Carrousel/Carrousel';
+import CountPage from '../CountPage/CountPage';
 
 const Pages = () => {
 
-    const [rotation, setRotation] = useState(false);
+    // const [rotation, setRotation] = useState(false);
 
-    const handleClick = function (e) {
-        e.preventDefault()
-        setRotation(!rotation);
-    }
+    // const handleClick = function () {
+    //     // Appelle la fonction setRotation avec la valeur opposée de rotation
+    //     setRotation(!rotation);
+    // }
 
-    const [rotation2, setRotation2] = useState(false);
+    // const [rotation2, setRotation2] = useState(false);
 
-    const handleClick2 = function (e) {
-        e.preventDefault()
-        setRotation2(!rotation2);
-    }
+    // const handleClick2 = function () {
+    //     setRotation2(!rotation2);
+    // }
 
     const getId = (id) => {
         return elementJson.find((element) => element.id === id);
@@ -73,27 +72,13 @@ const Pages = () => {
                     </p>
                 </div>
             </div>
-            <div className='info'>
-                <div className='width'>
-                    <div>
-                    {/* Si rotation est vrai, la classe rotate est ajoutée. Sinon, aucune classe supplémentaire n'est ajoutée. */}
-                        <p className="nameDescription margin_top_mobile"><span>Description</span><i className={`fas fa-chevron-up ${rotation ? 'rotate' : 'rotate2'}`} onClick={handleClick}></i></p>
-                    </div>
-                    {/* si count est vrai, alors ajoute le paragraphe... */}
-                    {rotation && (<p className='infoDescription'>{element.description}</p>)}
-                </div>
-                <div className='width'>
-                    <div>
-                        <p className='nameDescription'><span>Equipement</span><i className={`fas fa-chevron-up ${rotation2 ? 'rotate' : 'rotate2'}`} onClick={handleClick2}></i></p>
-                    </div>
-                    {rotation2 && (<div className='infoDescription'>{element.equipments.map((elem, index) => (
-                                <div key={index}>
-                                    <p>{elem}</p>
-                                </div> 
-                            ))}
-                        </div>
-                    )}
-                </div>
+            <div className='bloc'>
+            <CountPage title="Description">
+                <p>{element.description}</p>
+            </CountPage>
+            <CountPage className="infoEnd" title="Equipement">
+                <p className='infoDescription'>{element.equipments}</p>
+            </CountPage>
             </div>
         </div>
     );
