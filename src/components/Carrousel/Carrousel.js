@@ -16,7 +16,7 @@ const Carrousel = () => {
         image
     )
 
-    // useState sert à gérer et mettre à jour l'état. ca commence à la premiere image
+    // useState sert à gérer et mettre à jour l'état.
     const [currentSlide, setCurrentSlide] = useState(0);
 
     return (

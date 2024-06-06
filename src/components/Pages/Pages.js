@@ -2,7 +2,7 @@ import React from 'react';
 import elementJson from '../../element.json'
 import { useParams } from 'react-router-dom';
 import Carrousel from '../Carrousel/Carrousel';
-import CountPage from '../CountPage/CountPage';
+import Count from '../Count/Count';
 import Stars from '../Stars/Stars';
 
 const Pages = () => {
@@ -43,12 +43,12 @@ const Pages = () => {
                 </div>
             </div>
             <div className='bloc'>
-            <CountPage title="Description">
+            <Count title="Description">
                 <p>{element.description}</p>
-            </CountPage>
-            <CountPage className="infoEnd" title="Equipement">
+            </Count>
+            <Count className="infoEnd" title="Equipement">
                 <p className='infoDescription'>{element.equipments}</p>
-            </CountPage>
+            </Count>
             </div>
         </div>
     );

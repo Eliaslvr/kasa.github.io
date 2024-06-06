@@ -12,7 +12,10 @@
   }
   
   .affiche {
-    width: 90%;
+    // width: 90%;
+    // margin: 0 auto;
+    width: 84%;
+    justify-content: center;
     margin: 0 auto;
   }
   
@@ -86,5 +89,10 @@
         width: 100%;
         font-size: 14px;
         line-height: 1.5;
+      }
+
+      .affiche {
+        width: 90%;
+        margin: 16px auto;
       }
     }
