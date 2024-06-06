@@ -12,10 +12,8 @@ function CountPage({title, children, className}) {
     return (
         <div className={`info ${className}`}>
             <div className='width'>
-                <div className=''>
                 {/* Si count est vrai, la classe rotate est ajoutée. Sinon, la classe rotate2 est ajoutée. */}
-                    <p className="nameDescription margin_top_mobile"><span>{title}</span><i className={`fas fa-chevron-up ${count ? 'rotate' : 'rotate2'}`} onClick={handleClick}></i></p>
-                </div>
+                <p className="nameDescription margin_top_mobile"><span>{title}</span><i className={`fas fa-chevron-up ${count ? 'rotate' : 'rotate2'}`} onClick={handleClick}></i></p>
                 {/* si count est vrai, alors ajoute le paragraphe... */}
                 {count && (<div className={`clickPage ${className}`}>{children}</div>)}
             </div>
